@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Barang {
@@ -8,13 +7,14 @@ public class Barang {
     private boolean status;
     
     public Barang(){
+        
         idMasyarakat.add(1);
         namaBarang.add("Sepeda");
         hargaAwal.add(500000);
         
         idMasyarakat.add(2);
         namaBarang.add("TV");
-        hargaAwal.add(600000);
+        hargaAwal.add(700000);
     }
     
      public int getIdMasyarakat(int a) {
