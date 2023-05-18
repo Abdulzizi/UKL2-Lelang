@@ -1,113 +1,35 @@
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
     
-//     // membuat objek-objek yang diperlukan
-//        Masyarakat masyarakat = new Masyarakat();
-//        Petugas petugas = new Petugas();
-//        Barang barang = new Barang();
-//        Lelang lelang = new Lelang();
-//        Penawar penawar = new Penawar();
-//
-//        // mengisi data masyarakat, petugas, barang, dan lelang
-//        ArrayList<String> namaMasyarakat = new ArrayList<>();
-//        namaMasyarakat.add("Andi");
-//        namaMasyarakat.add("Budi");
-//        masyarakat.setNama(namaMasyarakat);
-//
-//        ArrayList<String> namaPetugas = new ArrayList<>();
-//        namaPetugas.add("Cici");
-//        namaPetugas.add("Dedi");
-//        petugas.setNama(namaPetugas);
-//
-//        ArrayList<Integer> idMasyarakat = new ArrayList<>();
-//        idMasyarakat.add(1);
-//        idMasyarakat.add(2);
-//        barang.setIdMasyarakat(idMasyarakat);
-//
-//        ArrayList<String> namaBarang = new ArrayList<>();
-//        namaBarang.add("Sepatu");
-//        namaBarang.add("Baju");
-//        barang.setNamaBarang(namaBarang);
-//
-//        ArrayList<Integer> hargaAwal = new ArrayList<>();
-//        hargaAwal.add(100000);
-//        hargaAwal.add(50000);
-//        barang.setHargaAwal(hargaAwal);
-//
-//        ArrayList<Integer> idPenawar = new ArrayList<>();
-//        idPenawar.add(1);
-//        idPenawar.add(2);
-//        lelang.setIdPenawar(idPenawar);
-//
-//        ArrayList<Integer> idBarang = new ArrayList<>();
-//        idBarang.add(1);
-//        idBarang.add(2);
-//        lelang.setIdBarang(idBarang);
-//
-//        ArrayList<Integer> hargaTawar = new ArrayList<>();
-//        hargaTawar.add(150000);
-//        hargaTawar.add(75000);
-//        lelang.setHargaTawar(hargaTawar);
-//
-//        // menampilkan data lelang sebelum tutup
-//        System.out.println("Data Lelang Sebelum Ditutup");
-//        penawar.tampilkanLelang(lelang);
-//
-//        // menutup lelang
-////        penawar.tutupLelang(barang);
-//
-//        // menampilkan data lelang setelah tutup
-//        System.out.println("Data Lelang Setelah Ditutup");
-//        penawar.tampilkanLelang(lelang);
-//        
-//        penawar.tutupLelang(barang);
-
-
          Scanner scanner = new Scanner(System.in);
 
-         // Inisialisasi data masyarakat
+         // Inisialisasi Object
         Masyarakat masyarakat = new Masyarakat();
+        Barang barang = new Barang();
+        Penawar penawar = new Penawar();
+        Lelang lelang = new Lelang();
         
         
         // Inisialisasi data petugas
         Petugas petugas = new Petugas();
-        ArrayList<String> namaPetugas = new ArrayList<>();
-        ArrayList<String> alamatPetugas = new ArrayList<>();
-        ArrayList<String> teleponPetugas = new ArrayList<>();
-        namaPetugas.add("Osama Bin Sama");
-        alamatPetugas.add("Jl. Thamrin No. 20");
-        teleponPetugas.add("081234567891");
-        petugas.setNama(namaPetugas);
-        petugas.setAlamat(alamatPetugas);
-        petugas.setTelepon(teleponPetugas);
         
-        // Inisialisasi data barang
-        Barang barang = new Barang();
-        
-        // Inisialisasi data lelang
-        Lelang lelang = new Lelang();
-        
-        // Inisialisasi objek Penawar
-        Penawar penawar = new Penawar();
-        
-         // Menampilkan data masyarakat
+        // Menampilkan data masyarakat
         System.out.println("Data Masyarakat:");
         for (int i = 0; i < masyarakat.getJmlOrg(); i++) {
             System.out.println("Nama: " + masyarakat.getNama(i));
             System.out.println("Alamat: " + masyarakat.getAlamat(i));
             System.out.println("Telepon: " + masyarakat.getTelepon(i));
+            System.out.println("");
         }
         
         // Menampilkan data petugas
         System.out.println("\nData Petugas:");
-        for (int i = 0; i < petugas.getNama().size(); i++) {
-            System.out.println("Nama: " + petugas.getNama().get(i));
-            System.out.println("Alamat: " + petugas.getAlamat().get(i));
-            System.out.println("Telepon: " + petugas.getTelepon().get(i));
+        for (int i = 0; i < petugas.getJmlNama(); i++) {
+            System.out.println("Nama: " + petugas.getNama(i));
+            System.out.println("Alamat: " + petugas.getAlamat(i));
+            System.out.println("Telepon: " + petugas.getTelepon(i));
         }
         
         // Menampilkan data barang
@@ -123,7 +45,7 @@ public class Main {
     // Menampilkan data lelang
     System.out.println("\nData Lelang:");
     for (int i = 0; i < lelang.getHargaTawar(); i++) {
-        System.out.println("ID Lelang: " + (i+1));
+        System.out.println("ID Lelang: " + (i + 1));
         System.out.println("ID Penawar: " + lelang.getIdPenawar(i));
         System.out.println("ID Barang: " + lelang.getIdBarang(i));
         System.out.println("Harga Tawar: " + lelang.getHargaTawar(i));
@@ -146,11 +68,6 @@ public class Main {
     System.out.println("Nama Barang: " + barang.getNamaBarang(idBarang1 - 1));
     System.out.println("Harga Awal: " + barang.getHargaAwal(idBarang1 - 1));
 
-    // Cek apakah barang sudah pernah dilelang sebelumnyaa
-//    if (lelang.getIdBarang().contains(idBarang1)) {
-//        System.out.println("Barang sudah pernah dilelang sebelumnya!");
-//    }
-    
     // Mulai proses penawaran
     System.out.println("\n--- Proses Penawaran ---");
     boolean stop = false;
@@ -163,10 +80,7 @@ public class Main {
         if (idPenawar1 < 1 || idPenawar1 > masyarakat.getJmlOrg()) {
             System.out.println("ID Penawar tidak valid!");
         }
-        // Cek apakah ID Penawar sudah pernah melakukan penawaran sebelumnya
-//        if (lelang.getIdPenawar().contains(idPenawar1)) {
-//            System.out.println("Anda sudah pernah melakukan penawaran sebelumnya!");
-//        }
+        
         
         // Cetak informasi penawaran
         System.out.println("\nInformasi Penawaran:");
@@ -185,9 +99,9 @@ public class Main {
          }
     
            // menambahkan data penawaran ke dalam list lelang
-//           lelang.getIdBarang(idPenawar1);
-//           lelang.getIdPenawar(idPenawar1);
-//           lelang.getHargaTawar(hargaTawar1);
+            lelang.getIdBarang(idPenawar1);
+            lelang.getIdPenawar(idPenawar1);
+            lelang.getHargaTawar(hargaTawar1);
     
             // Cek apakah penawaran terakhir atau belum
          System.out.print("Apakah ada penawaran lagi? (y/n): ");
@@ -205,6 +119,9 @@ public class Main {
 
             System.out.println("ID Penawar dengan harga tertinggi: " + idPenawarMenang);
             System.out.println("Harga tertinggi: " + hargaTertinggi);
-        }
+
+            System.out.println(penawar.tutupLelang(barang));
+    
+    }
          
      }

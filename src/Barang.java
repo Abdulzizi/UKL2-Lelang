@@ -15,6 +15,10 @@ public class Barang {
         idMasyarakat.add(2);
         namaBarang.add("TV");
         hargaAwal.add(700000);
+        
+        idMasyarakat.add(3);
+        namaBarang.add("Laptop");
+        hargaAwal.add(1500000);
     }
     
      public int getIdMasyarakat(int a) {

@@ -1,32 +1,48 @@
 
 import java.util.ArrayList;
 
-public class Petugas {
+public class Petugas implements Dataable{
     private ArrayList<String> namaPetugas;
     private ArrayList<String> alamat;
     private ArrayList<String> telepon;
-
-    public ArrayList<String> getNama() {
-        return namaPetugas;
+    
+    public Petugas(){
+        namaPetugas.add("Osama Bin Sama");
+        alamat.add("Jl. Thamrin No. 20");
+        telepon.add("081234567891");
     }
 
-    public void setNama(ArrayList<String> namaPetugas) {
-        this.namaPetugas = namaPetugas;
+    @Override
+    public String getNama(int index) {
+        return namaPetugas.get(index);
     }
 
-    public ArrayList<String> getAlamat() {
-        return alamat;
+    @Override
+    public void setNama(String nama) {
+        this.namaPetugas.add(nama);
     }
 
-    public void setAlamat(ArrayList<String> alamat) {
-        this.alamat = alamat;
+    @Override
+    public String getAlamat(int index) {
+        return alamat.get(index);
     }
 
-    public ArrayList<String> getTelepon() {
-        return telepon;
+    @Override
+    public void setAlamat(String alamat) {
+        this.alamat.add(alamat);
     }
 
-    public void setTelepon(ArrayList<String> telepon) {
-        this.telepon = telepon;
+    @Override
+    public String getTelepon(int index) {
+        return telepon.get(index);
+    }
+
+    @Override
+    public void setTelepon(String telepon) {
+        this.telepon.add(telepon);
+    }
+    
+    public int getJmlNama(){
+        return this.namaPetugas.size();
     }
 }

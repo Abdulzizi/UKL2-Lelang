@@ -7,14 +7,22 @@ public class Masyarakat implements Dataable {
     private ArrayList<String> telepon = new ArrayList<String>();
 
     public Masyarakat() {
-        namaMasyarakat.add("abdul");
+        namaMasyarakat.add("abdul Qodir");
         alamat.add("Jl. Bandung No.2");
         telepon.add("0813641732");
+        
+        namaMasyarakat.add("Mahmud Mansul");
+        alamat.add("Jl. Sawojajar No.65");
+        telepon.add("08234156389");
+        
+        namaMasyarakat.add("Mr Ironi");
+        alamat.add("Jl. Ngawi Selatan No.91");
+        telepon.add("081254782395");
     }
     
     @Override
-     public String getNama(int index) {
-        return namaMasyarakat.get(index);
+     public String getNama(int a) {
+        return namaMasyarakat.get(a);
     }
     @Override
     public void setNama(String nama) {
@@ -22,8 +30,8 @@ public class Masyarakat implements Dataable {
     }
 
     @Override
-    public String getAlamat(int index) {
-        return alamat.get(index);
+    public String getAlamat(int a) {
+        return alamat.get(a);
     }
 
     @Override
@@ -32,8 +40,8 @@ public class Masyarakat implements Dataable {
     }
 
     @Override
-    public String getTelepon(int index) {
-        return telepon.get(index);
+    public String getTelepon(int a) {
+        return telepon.get(a);
     }
 
     @Override
