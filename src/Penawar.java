@@ -7,15 +7,21 @@ public class Penawar implements LelangA{
     @Override
      public void tutupLelang(Barang barang) {
         barang.setStatus(false);
-        int indexPemenang = 0;
-        int hargaTertinggi = 0;
+        int indexPemenang = -1;
+        int hargaTertinggi = -1;
+        
+        //mencari bid tertinggi
         for (int i = 0; i < barang.getJmlBrg(); i++) {
             if (barang.getHargaAwal(i) > hargaTertinggi) {
                 hargaTertinggi = barang.getHargaAwal(i);
                 indexPemenang = i;
             }
         }
-        System.out.println("Pemenang lelang adalah " + barang.getNamaBarang(indexPemenang) +  " dengan harga penawaran " + barang.getHargaAwal(indexPemenang));
+        if (indexPemenang != -1) {
+            System.out.println("Pemenag lelang adalah : "+barang.getNamaBarang(indexPemenang) + " Dengan Harga Penawaran "+barang.getHargaAwal(indexPemenang));
+        } else {
+            System.out.println("Tidak Ada Penawar Yang Valid");
+        }
     }
     @Override
       public void tampilkanLelang(Lelang lelang) {

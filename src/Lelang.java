@@ -21,6 +21,14 @@ public class Lelang {
         hargaTawar.add(1500000);
     }
     
+//    public ArrayList<Integer> getData(int index){
+//        ArrayList<Integer> data = new ArrayList<Integer>();
+//        data.add(idPenawar.get(index));
+//        data.add(idBarang.get(index));
+//        data.add(hargaTawar.get(index));
+//        return data;
+//    }
+    
      public int getIdPenawar(int a) {
         return idPenawar.get(a);
     }

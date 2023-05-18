@@ -2,14 +2,18 @@
 import java.util.ArrayList;
 
 public class Petugas implements Dataable{
-    private ArrayList<String> namaPetugas;
-    private ArrayList<String> alamat;
-    private ArrayList<String> telepon;
+    private ArrayList<String> namaPetugas = new ArrayList<>();;
+    private ArrayList<String> alamat = new ArrayList<>();;
+    private ArrayList<String> telepon = new ArrayList<>();;
     
     public Petugas(){
         namaPetugas.add("Osama Bin Sama");
         alamat.add("Jl. Thamrin No. 20");
         telepon.add("081234567891");
+        
+        namaPetugas.add("Jaeir ibnn Sama");
+        alamat.add("Jl. Shhehs No. 20");
+        telepon.add("08135363728");
     }
 
     @Override

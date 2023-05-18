@@ -10,10 +10,9 @@ public class Main {
         Barang barang = new Barang();
         Penawar penawar = new Penawar();
         Lelang lelang = new Lelang();
-        
-        
-        // Inisialisasi data petugas
         Petugas petugas = new Petugas();
+        
+        
         
         // Menampilkan data masyarakat
         System.out.println("Data Masyarakat:");
@@ -74,13 +73,13 @@ public class Main {
     while (!stop) {
         System.out.print("Masukkan ID Penawar: ");
         int idPenawar1 = scanner.nextInt();
-        scanner.nextLine(); // Kalo kata internet ini buat membersihkan buffer
+        scanner.nextLine(); //  ini buat membersihkan buffer
     
-        // Cek apakah ID Penawar yang dimasukkan Valdi
+        // Cek apakah ID Penawar yang dimasukkan Valid
         if (idPenawar1 < 1 || idPenawar1 > masyarakat.getJmlOrg()) {
             System.out.println("ID Penawar tidak valid!");
+            continue;
         }
-        
         
         // Cetak informasi penawaran
         System.out.println("\nInformasi Penawaran:");
