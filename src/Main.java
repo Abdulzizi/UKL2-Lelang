@@ -120,7 +120,6 @@ public class Main {
             System.out.println("ID Penawar dengan harga tertinggi: " + idPenawarMenang);
             System.out.println("Harga tertinggi: " + hargaTertinggi);
 
-            System.out.println(penawar.tutupLelang(barang));
     
     }
          

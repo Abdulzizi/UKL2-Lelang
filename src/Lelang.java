@@ -11,6 +11,14 @@ public class Lelang {
         idPenawar.add(1);
         idBarang.add(1);
         hargaTawar.add(600000);
+        
+        idPenawar.add(2);
+        idBarang.add(2);
+        hargaTawar.add(800000);
+        
+        idPenawar.add(3);
+        idBarang.add(3);
+        hargaTawar.add(1500000);
     }
     
      public int getIdPenawar(int a) {
