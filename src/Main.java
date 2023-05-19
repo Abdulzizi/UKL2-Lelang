@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
         Lelang lelang = new Lelang();
         Petugas petugas = new Petugas();
         
-        
+        ArrayList<Integer> hargaTertinggi1 = new ArrayList();
         
         // Menampilkan data masyarakat
         System.out.println("Data Masyarakat:");
@@ -24,12 +25,12 @@ public class Main {
         }
         
         // Menampilkan data petugas
-        System.out.println("\nData Petugas:");
-        for (int i = 0; i < petugas.getJmlNama(); i++) {
-            System.out.println("Nama: " + petugas.getNama(i));
-            System.out.println("Alamat: " + petugas.getAlamat(i));
-            System.out.println("Telepon: " + petugas.getTelepon(i));
-        }
+//        System.out.println("\nData Petugas:");
+//        for (int i = 0; i < petugas.getJmlNama(); i++) {
+//            System.out.println("Nama: " + petugas.getNama(i));
+//            System.out.println("Alamat: " + petugas.getAlamat(i));
+//            System.out.println("Telepon: " + petugas.getTelepon(i));
+//        }
         
         // Menampilkan data barang
     System.out.println("\nData Barang:");
@@ -89,18 +90,19 @@ public class Main {
         
         // meminta input harga tawar dari penawar
         System.out.print("Masukkan harga tawaran Anda: ");
-        int hargaTawar1 = scanner.nextInt();
+        hargaTertinggi1.add(scanner.nextInt());
+        int index = 0;
         scanner.nextLine(); // bersihin buffer lagi
         
         // Cek apakah harga tawar yang dimasukkan valdi
-         if (hargaTawar1 <= barang.getHargaAwal(idBarang1 - 1)) {
+         if (hargaTertinggi1.get(index) <= barang.getHargaAwal(idBarang1 - 1)) {
         System.out.println("Harga tawaran harus lebih besar dari harga awal!");
          }
     
            // menambahkan data penawaran ke dalam list lelang
-            lelang.getIdBarang(idPenawar1);
-            lelang.getIdPenawar(idPenawar1);
-            lelang.getHargaTawar(hargaTawar1);
+//            lelang.getIdBarang(idPenawar1-1);
+//            lelang.getIdPenawar(idPenawar1-1);
+//            lelang.getHargaTawar(hargaTertinggi1.get(index));
     
             // Cek apakah penawaran terakhir atau belum
          System.out.print("Apakah ada penawaran lagi? (y/n): ");
@@ -110,14 +112,16 @@ public class Main {
                    }
              }
 
-            // Cetak hasil lelang
+//             Cetak hasil lelang
             System.out.println("\n--- Hasil Lelang ---");
-            
+//            
             int idPenawarMenang = lelang.getIdPenawar(idBarang1 - 1);
-            int hargaTertinggi = lelang.getHargaTawar(idBarang1 - 1);
+             hargaTertinggi1.add(lelang.getHargaTawar(idBarang1 - 1));
 
             System.out.println("ID Penawar dengan harga tertinggi: " + idPenawarMenang);
-            System.out.println("Harga tertinggi: " + hargaTertinggi);
+            System.out.println("Harga tertinggi: " + hargaTertinggi1.get(idBarang1-1)+"\n");
+            penawar.tutupLelang(barang);
+            
 
     
     }

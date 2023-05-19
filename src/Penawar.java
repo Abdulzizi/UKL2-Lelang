@@ -7,8 +7,8 @@ public class Penawar implements LelangA{
     @Override
      public void tutupLelang(Barang barang) {
         barang.setStatus(false);
-        int indexPemenang = -1;
-        int hargaTertinggi = -1;
+        int indexPemenang = 0;
+        int hargaTertinggi = 0;
         
         //mencari bid tertinggi
         for (int i = 0; i < barang.getJmlBrg(); i++) {
