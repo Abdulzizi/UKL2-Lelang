@@ -114,16 +114,13 @@ public class Main {
 
 //             Cetak hasil lelang
             System.out.println("\n--- Hasil Lelang ---");
-//            
             int idPenawarMenang = lelang.getIdPenawar(idBarang1 - 1);
              hargaTertinggi1.add(lelang.getHargaTawar(idBarang1 - 1));
 
             System.out.println("ID Penawar dengan harga tertinggi: " + idPenawarMenang);
             System.out.println("Harga tertinggi: " + hargaTertinggi1.get(idBarang1-1)+"\n");
-            penawar.tutupLelang(barang);
+//            penawar.tutupLelang(barang);
             
-
-    
     }
          
      }
